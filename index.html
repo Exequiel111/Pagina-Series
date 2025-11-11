@@ -205,7 +205,6 @@
     </div>
   </footer>
 
-  <!-- 🔝 Botón subir al inicio -->
   <button id="btnSubir" title="Subir">&#8679;</button>
 
   <!-- SCRIPT -->
@@ -294,6 +293,30 @@
         form.reset();
       }
     });
+
+
+    //Menu hamburguesa//
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mainMenu = document.getElementById('main-menu');
+
+    if (mobileToggle && mainMenu) {
+        // 1. Alternar la clase 'open' en el menú cuando se hace clic en el botón
+        mobileToggle.addEventListener('click', () => {
+            mainMenu.classList.toggle('open');
+            // Opcional: Cerrar el menú si el usuario hace clic en un enlace (para mejorar UX móvil)
+            document.body.style.overflow = mainMenu.classList.contains('open') ? 'hidden' : 'auto';
+        });
+
+        // 2. Cerrar el menú al hacer clic en un enlace (en caso de que el menú esté abierto)
+        mainMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainMenu.classList.contains('open')) {
+                    mainMenu.classList.remove('open');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    }
   </script>
 </body>
 </html>

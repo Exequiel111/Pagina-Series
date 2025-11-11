@@ -162,4 +162,38 @@ html, body {
   .slide img{height:300px; max-width:none;}
   .intro-title{font-size:5rem;}
   .typing-message{font-size:1.5rem;}
+
+    /* === Estilos del Menú Abierto (Hamburguesa) === */
+    #main-menu.open {
+        display: flex; /* Mostrar el menú */
+        position: absolute;
+        top: 100px; /* Debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: #111; /* Mismo color de fondo que el header */
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+        z-index: 10; /* Asegura que esté por encima de otros elementos */
+    }
+
+    #main-menu.open ul {
+        flex-direction: column; /* Apilar los enlaces verticalmente */
+        width: 100%;
+        gap: 15px; /* Espacio entre los enlaces */
+        text-align: center;
+    }
+    
+    #main-menu.open ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    #main-menu.open ul li:last-child {
+        border-bottom: none;
+    }
 }
+
+
+
